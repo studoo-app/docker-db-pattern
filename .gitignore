@@ -2,5 +2,5 @@
 .idea/**
 
 ### Docker data mysql
-data/**
+dbdata/**
 

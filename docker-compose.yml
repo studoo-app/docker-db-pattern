@@ -1,18 +1,6 @@
 version: "3"
 services:
-  phpmyadmin:
-    container_name: phpmyadmin
-    image: phpmyadmin:5.0
-    ports:
-      - "8082:80"
-    environment:
-      - MYSQL_USERNAME=root
-      - MYSQL_PASSWORD=yoo92
-    links:
-      - mysql
-    volumes:
-      - ./data:/var/lib/mysql
-  mysql:
+  db:
     container_name: mysql
     image: mysql:5.7
     platform: linux/amd64
@@ -20,7 +8,23 @@ services:
       - "3306:3306"
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=yoo92
-      - MYSQL_DATABASE=yoo
-      - MYSQL_USER=yoo
-      - MYSQL_PASSWORD=yoo92
+      MYSQL_ROOT_PASSWORD: yoo
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: gosman
+      MYSQL_PASSWORD: yoo
+    volumes:
+      - ./dbdata:/var/lib/mysql
+  phpmyadmin:
+    container_name: pma
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    links:
+      - db
+volumes:
+  dbdata:
