@@ -8,14 +8,16 @@
 
 ### Stack ###
 
-L'environnement de dev se repose sur [DOCKER](https://docker.com)
+L'environnement de dev se repose sur [DOCKER](https://docker.com) / [MYSQL](https://hub.docker.com/_/mysql) / [PHPMYADMIN](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) 
 
+@autor : benoit@foujols.com \
+@version : 3.0.0 
 
 ### Acces au service
 
-Service PhpMysqlAdmin
-[http://localhost:8082/](http://localhost:8082/)
-Login : root
+Service PhpMysqlAdmin [(docker doc)](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) \
+[http://localhost:8082/](http://localhost:8082/) \
+Login : root \
 Password : *****
 
 ---
@@ -27,12 +29,24 @@ Password : *****
 Fonctionnement 
 
 1. Téléchargement du projet
-
 ```
 $ git clone git@github.com:bfoujols/docker-db-mysql-57.git
+```
+2. Creation de l'environnement docker
+```
 $ sudo docker-compose create
+```
+3. Demarrer l'environnement docker
+```
 $ sudo docker-compose start
+```
+4. Stop l'environnement docker
+```
 $ sudo docker-compose stop
+```
+5. Rebuild l'environnement docker
+```
+$ sudo docker-compose rm
 ```
 
 ---
