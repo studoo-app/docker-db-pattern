@@ -8,17 +8,24 @@
 
 ### Stack ###
 
-L'environnement de dev se repose sur [DOCKER](https://docker.com) / [MYSQL](https://hub.docker.com/_/mysql) / [PHPMYADMIN](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) 
+L'environnement de dev se repose sur [DOCKER](https://docker.com) / [MYSQL](https://hub.docker.com/_/mysql) / [PHPMYADMIN](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) / [ADMINER](https://hub.docker.com/_/adminer/) 
 
-@autor : benoit@foujols.com \
-@version : 3.0.0 
+@autor : Benoit Foujols \
+@version : 3.1.0 
 
 ### Acces au service
 
+Service Mysql 5.7 \
+mysql://127.0.0.1:3306 \
 Service PhpMysqlAdmin [(docker doc)](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) \
 [http://localhost:8082/](http://localhost:8082/) \
+/!\* Service Adminer [(docker doc)](https://hub.docker.com/_/adminer/)  \
+[http://localhost:8081/](http://localhost:8081/) \
 Login : root \
 Password : *****
+
+A vous de choisir le service au moment du docker -> create (build) \
+/!\* Par defaut, c'est phpmyadmin a vous de décommenter adminer pour l'activer
 
 ---
 
@@ -32,19 +39,30 @@ Fonctionnement
 ```
 $ git clone git@github.com:bfoujols/docker-db-mysql-57.git
 ```
-2. Creation de l'environnement docker
+2. Modifier le fichier docker-composer.yml
+```
+$ cp exempl_docker-composer.yml docker-composer.yml
+$ vim docker-composer.yml
+<<<
+11      MYSQL_ROOT_PASSWORD: ****
+12      MYSQL_DATABASE: app_db
+13      MYSQL_USER: ****
+14      MYSQL_PASSWORD: ****
+>>>
+```
+3. Creation de l'environnement docker
 ```
 $ sudo docker-compose create
 ```
-3. Demarrer l'environnement docker
+4. Demarrer l'environnement docker
 ```
 $ sudo docker-compose start
 ```
-4. Stop l'environnement docker
+5. Stop l'environnement docker
 ```
 $ sudo docker-compose stop
 ```
-5. Rebuild l'environnement docker
+6. Rebuild l'environnement docker
 ```
 $ sudo docker-compose rm
 ```
