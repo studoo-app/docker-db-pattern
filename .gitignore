@@ -2,6 +2,6 @@
 .idea/**
 
 ### Docker data mysql
-dbdata/**
+*/dbdata/**
 mysql-5.7/docker-compose.yml
 
