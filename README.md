@@ -41,7 +41,6 @@ $ git clone git@github.com:bfoujols/docker-db-mysql-57.git
 ```
 2. Modifier le fichier docker-composer.yml
 ```
-$ cp exempl_docker-composer.yml docker-composer.yml
 $ vim docker-composer.yml
 <<<
 11      MYSQL_ROOT_PASSWORD: ****
