@@ -1,8 +1,8 @@
 ```
-                     _   ___  ____ 
-  _ __ _  _ ___ __ _| | | __||__  |
- | '  \ || (_-</ _` | | |__ \_ / / 
- |_|_|_\_, /__/\__, |_| |___(_)_/  
+                     _  
+  _ __ _  _ ___ __ _| | 
+ | '  \ || (_-</ _` | |
+ |_|_|_\_, /__/\__, |_|  
        |__/       |_|              
 ```
 
@@ -15,7 +15,7 @@ L'environnement de dev se repose sur [DOCKER](https://docker.com) / [MYSQL](http
 
 ### Acces au service
 
-Service Mysql 5.7 \
+Service Mysql \
 mysql://127.0.0.1:3306 \
 Service PhpMysqlAdmin [(docker doc)](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) \
 [http://localhost:8082/](http://localhost:8082/) \
