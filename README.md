@@ -37,10 +37,9 @@ A vous de choisir le service au moment du docker -> docker-compose create (build
 
 Fonctionnement 
 
-1. Téléchargement du projet
-```
-$ git clone git@github.com:bfoujols/docker-db-mysql-57.git
-```
+1. Téléchargement du projet via GITHUB 
+
+
 2. Modifier le fichier docker-composer.yml
 ```
 $ vim docker-composer.yml
