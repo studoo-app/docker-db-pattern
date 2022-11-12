@@ -6,25 +6,27 @@
        |__/       |_|              
 ```
 
-### Stack ###
-
-L'environnement de dev se repose sur [DOCKER](https://docker.com) / [MYSQL](https://hub.docker.com/_/mysql) / [PHPMYADMIN](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) / [ADMINER](https://hub.docker.com/_/adminer/) 
+Proposition d'un environnement de dev sur [DOCKER](https://docker.com) / [MYSQL](https://hub.docker.com/_/mysql) / [PHPMYADMIN](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) / [ADMINER](https://hub.docker.com/_/adminer/) 
+Vous avez la possibilité d'avoir Mysql version 5.7 / 8.0
 
 @autor : Benoit Foujols \
-@version : 3.1.0 
+@version : 3.2.0 
 
 ### Acces au service
 
-Service Mysql \
+#### Service Mysql
 mysql://127.0.0.1:3306 \
-Service PhpMysqlAdmin [(docker doc)](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) \
-[http://localhost:8082/](http://localhost:8082/) \
-/!\* Service Adminer [(docker doc)](https://hub.docker.com/_/adminer/)  \
-[http://localhost:8081/](http://localhost:8081/) \
-Login : root \
-Password : *****
 
-A vous de choisir le service au moment du docker -> create (build) \
+#### Service d'administation d'une base de donnée
+Vous avez la possibilité d'avoir 2 interface d'administration de base de donnée : \
+
+PHPMYADMIN [(docker doc)](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) \
+Lien pour d'accès : [http://localhost:8082/](http://localhost:8082/) 
+
+/!\* ADMINER [(docker doc)](https://hub.docker.com/_/adminer/)  \
+Lien pour d'accès : [http://localhost:8081/](http://localhost:8081/) \
+
+A vous de choisir le service au moment du docker -> docker-compose create (build) \
 /!\* Par defaut, c'est phpmyadmin a vous de décommenter adminer pour l'activer
 
 ---

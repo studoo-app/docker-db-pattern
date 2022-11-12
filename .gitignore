@@ -3,5 +3,4 @@
 
 ### Docker data mysql
 */dbdata/**
-mysql-5.7/docker-compose.yml
 
