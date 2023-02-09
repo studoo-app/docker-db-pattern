@@ -15,3 +15,6 @@ Stack à installer :
 - [ ] Installer Docker Compose : [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
 
 
+### 2. Pattern
+
+- [DB MYSQL 8.0](https://github.com/studoo-app/docker-db-pattern/tree/main/mysql-8.0)
