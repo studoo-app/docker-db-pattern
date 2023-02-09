@@ -8,10 +8,11 @@ services:
       - "3306:3306"
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: yoo
       MYSQL_DATABASE: app_db
-      MYSQL_USER: gosman
-      MYSQL_PASSWORD: yoo
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+#      MYSQL_ROOT_PASSWORD: yoo
+#      MYSQL_USER: yoo
+#      MYSQL_PASSWORD: yoo
     volumes:
       - ./dbdata:/var/lib/mysql
   phpmyadmin:
