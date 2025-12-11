@@ -1,7 +1,6 @@
-version: "3"
 services:
-  db:
-    container_name: mysql-80
+  database:
+    container_name: app-mysql
     image: mysql:8.0
     platform: linux/amd64
     ports:
@@ -15,13 +14,14 @@ services:
 #      MYSQL_PASSWORD: yoo
     volumes:
       - ./dbdata:/var/lib/mysql
+
   phpmyadmin:
-    container_name: pma-80
+    container_name: app-pma
     image: phpmyadmin/phpmyadmin
     ports:
       - "8082:80"
     environment:
-      PMA_HOST: db
+      PMA_HOST: database
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
       UPLOAD_LIMIT: 1G
@@ -29,16 +29,7 @@ services:
       MAX_EXECUTION_TIME: 0
     restart: always
     links:
-      - db
-#  adminer:
-#    image: adminer
-#    restart: always
-#    ports:
-#      - "8081:8080"
-#    environment:
-#      ADMINER_DEFAULT_SERVER: db
-#      ADMINER_DESIGN: "lucas-sandery"
-#    links:
-#      - db
+      - database
+
 volumes:
   dbdata:

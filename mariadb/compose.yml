@@ -1,0 +1,36 @@
+services:
+  database:
+    container_name: app-mariadb
+    image: mariadb:latest
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: app_db
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+#      MYSQL_ROOT_PASSWORD: yoo
+#      MYSQL_USER: yoo
+#      MYSQL_PASSWORD: yoo
+      TZ: Europe/Paris
+    volumes:
+      - ./dbdata:/var/lib/mysql
+      
+  phpmyadmin:
+    container_name: app-pma
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+      UPLOAD_LIMIT: 1G
+      MEMORY_LIMIT: 512M
+      MAX_EXECUTION_TIME: 0
+    restart: always
+    links:
+      - database
+
+volumes:
+  dbgate-data:
+    driver: local

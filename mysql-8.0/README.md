@@ -18,13 +18,10 @@ Vous avez la possibilité d'avoir Mysql 8.0
 mysql://127.0.0.1:3306 \
 
 #### Service d'administation d'une base de donnée
-Vous avez la possibilité d'avoir 2 interface d'administration de base de donnée : \
+Vous avez la possibilité d'avoir une interface d'administration de base de donnée : \
 
 PHPMYADMIN [(docker doc)](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) \
-Lien pour d'accès : [http://localhost:8082/](http://localhost:8082/) 
-
-/!\* ADMINER [(docker doc)](https://hub.docker.com/_/adminer/)  \
-Lien pour d'accès : [http://localhost:8081/](http://localhost:8081/) \
+Lien pour d'accès : [http://localhost:8082/](http://localhost:8082/)
 
 A vous de choisir le service au moment du docker -> docker-compose create (build) \
 /!\* Par defaut, c'est phpmyadmin a vous de décommenter adminer pour l'activer
